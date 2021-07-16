@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">InnovationTask</string>
+    <string name="error">Can\'t load data from server!</string>
 </resources>

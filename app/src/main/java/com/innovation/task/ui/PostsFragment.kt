@@ -35,7 +35,7 @@ class PostsFragment : Fragment(R.layout.fragment_posts) {
 
         showProgressBar()
         viewModel.posts.observe(viewLifecycleOwner, { response ->
-            when(response){
+            when (response) {
                 is Resource.Loading -> {
                     showProgressBar()
                 }
@@ -47,7 +47,11 @@ class PostsFragment : Fragment(R.layout.fragment_posts) {
 
                 is Resource.Error -> {
                     hideProgressBar()
-                    Toast.makeText(requireContext(),"An error occurred. Couldn't load data from server!",Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        requireContext(),
+                        resources.getText(R.string.error),
+                        Toast.LENGTH_SHORT
+                    ).show()
                     postsAdapter.differ.submitList(response.data?.toList())
                 }
             }

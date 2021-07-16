@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:listitem="@layout/item_post_preview"
-        android:padding="5dp"
+        android:padding="@dimen/small_padding"
         android:clipChildren="false"
         android:clipToPadding="false"
         android:paddingBottom="50dp"
